@@ -52,3 +52,5 @@ go-swagger.iml
 
 node_modules
 _book
+
+.dobi
