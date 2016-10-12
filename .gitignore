@@ -54,3 +54,4 @@ node_modules
 _book
 
 .dobi
+coverage.txt

@@ -47,10 +47,15 @@ job=generate:
     mounts: [source]
     command: "go generate ./generator"
     artifact: generator/bindata.go
+    sources: [generator/templates]
 
+job=coverage:
+    use: builder
+    mounts: [source]
+    interactive: true
+    command: hack/coverage.sh
+    artifact: coverage.txt
 
-alias=ci:
-    tasks: []
 
 alias=test:
     tasks: [test-unit, test-canary]

@@ -1,8 +1,7 @@
-FROM    golang:1.7-alpine
+FROM    golang:1.7
 
 WORKDIR /go/src/github.com/go-swagger/go-swagger
 
-RUN     apk add -U bash git
 RUN     go get github.com/dnephin/filewatcher && \
         cp /go/bin/filewatcher /usr/bin/ && \
         rm -rf /go/src/* /go/pkg/* /go/bin/*
@@ -10,6 +9,3 @@ RUN     go get github.com/dnephin/filewatcher && \
 RUN     go get github.com/jteeuwen/go-bindata/go-bindata && \
         cp /go/bin/go-bindata /usr/bin/ && \
         rm -rf /go/src/* /go/pkg/* /go/bin/*
-
-ENV     GOCOVMODE=count
-ENV     CGO_ENABLED=0
