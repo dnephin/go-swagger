@@ -1,0 +1,12 @@
+#!/bin/bash
+
+exec filewatcher \
+    -x '.git' \
+    -x '.dobi' \
+    -x 'vendor' \
+    -x '**/*.swp' \
+    -x 'dist' \
+    -x 'hack' \
+    -x 'docs' \
+    -- \
+    go test -v -run TestGenerateModel './${dir}'
